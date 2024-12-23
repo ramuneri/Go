@@ -2,44 +2,104 @@ package main
 
 import ("fmt"
         "strings"
-        "sort"
+        // "sort"
+        "math"
     )
 
+    func sayGreeting(n string) {
+        fmt.Printf("Good morning %v \n", n)
+    }
 
+
+    func sayBye(n string) {
+        fmt.Printf("Bye  %v \n", n)
+    }
+
+
+    func cycleNames(n []string, f func(string)) {
+        for _, v := range n {
+            f(v)
+        }
+    }
+
+    func circleArea(r float64) float64 {
+        return math.Pi * r * r
+    }
+
+
+    func getInitials(n string) (string, string) {
+        s := strings.ToUpper(n)
+        names := strings.Split(s, " ")
+
+        var initials []string
+        for _, v := range names {
+            initials = append(initials, v[:1])
+        }
+
+        if len(initials) > 1 {
+            return initials[0], initials[1]
+        }
+        return initials[0], "_"
+    }
 
 
 func main() {
+    // 9. --------------------------
+    // sayGreeting("Ramune")
+    // sayBye("Ruta")
 
-    // 6-----------------------
-    greeting := "Hello dino, this is me!"
+    // cycleNames([]string{"ramunele", "rami", "rama"}, sayGreeting)
 
-    fmt.Println(strings.Contains(greeting, "Hello")) // true
-    fmt.Println(strings.ReplaceAll(greeting, "Hello", "hi")) // but does not change the original
-    fmt.Println(strings.Split(greeting, " ")) // gives a slice [Hello dino, this is me!]
-    fmt.Println("\n")
+    // a1 := circleArea(10.5)
+    // a2 := circleArea(15)
+
+    // fmt.Println(a1, a2)
+    // fmt.Printf("a1 = %0.3f, a2 = %0.3f", a1, a2)
+
+    // fn, ln := getInitials("ramune Jan")
+    // fmt.Println(fn, ln)
+
+    // // 7--------------------------
+    // x := 0
+    // for x < 5 {
+    //     fmt.Println("x = ", x)
+    //     x++
+    // }
+
+    // names := []string{"Ramune", "Ruta", "Marijus", "Zopa"}
+    // for i := 0; i < len(names); i++ {
+    //     fmt.Println(names[i])
+    // }
+
+    // for index, value := range names {
+    //     fmt.Printf("the positions at index %v is %v \n", index, value)
+    // }
+
+    // for _, value := range names { // if no need for index
+    //     fmt.Printf("the name is %v \n", value)
+    // }
 
 
-    ages := []int{20, 17, 23, 15, 14}
-    sort.Ints(ages)
-    fmt.Println(ages)
+    // // 6-----------------------
+    // greeting := "Hello dino, this is me!"
 
-    index := sort.SearchInts(ages, 20) // must sort before using this
-    fmt.Println(index) // will search in sorted list
-
-    names := []string{"Ramune", "Ruta", "Marijus", "Zopa"}
-    sort.Strings(names)
-    fmt.Println(names)
-    fmt.Println(sort.SearchStrings(names, "Tomas")) // 3 bc Tomas would fit on on 3
+    // fmt.Println(strings.Contains(greeting, "Hello")) // true
+    // fmt.Println(strings.ReplaceAll(greeting, "Hello", "hi")) // but does not change the original
+    // fmt.Println(strings.Split(greeting, " ")) // gives a slice [Hello dino, this is me!]
+    // fmt.Println("\n")
 
 
+    // ages := []int{20, 17, 23, 15, 14}
+    // sort.Ints(ages)
+    // fmt.Println(ages)
 
+    // index := sort.SearchInts(ages, 20) // must sort before using this
+    // fmt.Println(index) // will search in sorted list
 
-
-
-
-
-
-
+    // names := []string{"Ramune", "Ruta", "Marijus", "Zopa"}
+    // sort.Strings(names)
+    // fmt.Println(names)
+    // fmt.Println(sort.SearchStrings(names, "Tomas")) // 3 bc Tomas would fit on on 3
 
 
 //     // 5----------------------
