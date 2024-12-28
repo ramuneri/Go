@@ -9,15 +9,9 @@ func updateName(x *string) {
 }
 
 func main() {
-    name := "Ramune"
+    mybill := newBill("Marijaus bill")
 
-    m := &name
-    fmt.Println("memory address is: ", m)
-    fmt.Println("value there is: ", *m)
-
-    fmt.Println(name)
-    updateName(m)
-    fmt.Println(name)
+    fmt.Println(mybill.format())
 
 
 }
