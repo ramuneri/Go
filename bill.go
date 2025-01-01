@@ -8,7 +8,6 @@ type bill struct {
 	tip   float64
 }
 
-// make new bills
 func newBill(name string) bill {
 	b := bill{
 		name:  name,
@@ -18,7 +17,7 @@ func newBill(name string) bill {
 	return b
 }
 
-func (b *bill) format() string { // receives bill, returns formatted string
+func (b *bill) format() string {
 	fs := "Bill breakdown: \n"
 	var total float64 = 0
 
@@ -33,8 +32,6 @@ func (b *bill) format() string { // receives bill, returns formatted string
 	return fs
 }
 
-
-// update the tip
 func (b *bill) updateTip(tip float64) {
 	b.tip = tip
 }
