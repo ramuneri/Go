@@ -70,6 +70,4 @@ func promptOptions(b bill) {
 func main() {
 	myBill := createBill()
 	promptOptions(myBill)
-
-	// fmt.Println(myBill)
 }

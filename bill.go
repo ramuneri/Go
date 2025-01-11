@@ -48,6 +48,6 @@ func (b *bill) save() {
 
 	err := os.WriteFile(b.name+".txt", data, 0644)
 	if err != nil { // if error is
-		panic(err) // stops the flow of the program and prints the err
+		panic(err)  // stops the flow of the program and prints the err
 	}
 }
